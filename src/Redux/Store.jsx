@@ -1,10 +1,8 @@
-import {configureStore} from '@reduxjs/toolkit'
-
-const dummyReducer = (state = [], action) => state;
+import { configureStore } from '@reduxjs/toolkit'
+import rootReducers from './Reducer';
 
 const store = configureStore({
-  reducer: {
-    handleCart: dummyReducer,
-  },
+    reducer: rootReducers
 });
+
 export default store;

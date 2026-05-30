@@ -4,7 +4,7 @@ import {useSelector}from 'react-redux'
 import { Routes, Route } from "react-router-dom";
 
 const Navbar =() => {
-    const state =useSelector(state => state.handleCart)
+    const state =useSelector(state => state.HandleCart)
     return (
       <>
         <nav className="navbar navbar-expand-lg bg-light py-3 static-top">

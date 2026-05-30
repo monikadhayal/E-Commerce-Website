@@ -120,7 +120,7 @@ const Loading = () => {
                                     Buy Now
                                     </Link>
                                     <button className="btn btn-dark m-1" onClick={() => {
-                                        toast.success("Added to cart");
+                                        alert("Added to cart");
                                         addProduct(product);
                                     }}>
                                     Add to Cart

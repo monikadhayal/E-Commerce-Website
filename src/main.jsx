@@ -40,8 +40,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import ScrollToTop from "./Components/ScrollToTop";
 import store from "./Redux/Store";
-
+import Cart from "./Pages/Cart";
 import Home from "./Pages/Home";
+import Product from "./Pages/Product";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -51,6 +52,8 @@ createRoot(document.getElementById("root")).render(
       
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path ="/product" element={<Product />} />
+          <Route path ="/cart" element={<Cart />} />
         </Routes>
 
         <App />

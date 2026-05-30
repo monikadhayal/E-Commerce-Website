@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import Skeleton from "./Skeleton";
 import { Link,useParams } from "react-router-dom";
 import { addCart } from '../Redux/Action';
+
 import {Footer,Navbar} from '../Components'
 import Marquee from "react-fast-marquee";
 
