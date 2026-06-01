@@ -1,9 +1,10 @@
 import React from 'react'
 import { useEffect, useState } from "react"
 import { useDispatch } from "react-redux";
-import Skeleton from "./Skeleton";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 import { Link,useParams } from "react-router-dom";
-import { addCart } from '../Redux/Action';
+import { addCart } from "../Redux/Action";
 
 import {Footer,Navbar} from '../Components'
 import Marquee from "react-fast-marquee";
