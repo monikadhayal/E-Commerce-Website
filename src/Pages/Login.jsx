@@ -7,7 +7,7 @@ const Login = () => {
 
     return (
         <>
-            <Navbar />
+            
             <div className="container my-3 py-3">
                 <h1 className="text-center">Login Page</h1>
                 <hr />

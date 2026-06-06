@@ -13,14 +13,17 @@ import ContactPage from "./Pages/ContactPage";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import Checkout from "./Pages/Checkout";
+import Products from "./Pages/Products";
+
 function App() {
   return (
     <>
       <Navbar />
-
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/product" element={<Product />} />
+        {/* <Route path="/products/:id" element={<Product />} /> */}
+        <Route path="/products" element={<Products />} />
+        <Route path="/products/:id" element={<Product />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />

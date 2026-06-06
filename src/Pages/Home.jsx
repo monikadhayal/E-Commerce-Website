@@ -13,15 +13,16 @@
 // }
 // export default Home;
 
-import { MainSection, Product, Footer } from "../Components";
+import { MainSection,Product, Footer } from "../Components";
 import React from "react";
+// import {Product} from "";
 
 function Home() {
   return (
     <>
-      <MainSection />
-      <Product />
-      <Footer />
+      <MainSection/>
+      <Product/>
+      <Footer/>
     </>
   );
 }

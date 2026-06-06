@@ -3,6 +3,7 @@ import React from 'react'
 import { useDispatch } from "react-redux";
 import Skeleton from "./Skeleton";
 import { Link } from "react-router-dom";
+import { addCart } from "../Redux/Action";
 
 const Products = () => {
     const [data, setData] =  useState([]);
@@ -18,17 +19,21 @@ const Products = () => {
         const getProducts = async () => {
             setLoading(true);
             const response = await fetch("https://fakestoreapi.com/products");
-            // const products = await response.json();
+            
             if (componentMounted) {
-                setData(await response.clone().json());
-                setFilter(await response.json());
+                // setData(await response.clone().json());
+                // setFilter(await response.json());
+                // setLoading(false);
+                const products = await response.json(); // ✅ Fix 3 - ek baar parse
+                setData(products);
+                setFilter(products);
                 setLoading(false);
                
             }
 
-        return () => {
-            componentMounted = false;
-        };
+       return () => {
+         componentMounted = false;
+       };
     };
     getProducts();
 },[]);
@@ -137,25 +142,28 @@ const Loading = () => {
         );
             
     };
-    return(
-        <>
-        <div className="container my-3 py-3">
-            <div className="row"  >
-                <div className="col-12 ">
-                    <h2 className="display-5 text-center">
-                      Latest Products
-                    </h2>
-                    <hr/>
-
-                </div>
-
+    return (
+      <>
+        <div className="container my-3 py-3 bg-lime-50">
+          <div className="row">
+            <div className="col-12 ">
+              <h2
+                className="display-5 text-center  "
+                style={{ fontSize: "3rem", fontWeight: "500" }}
+              >
+                Latest Products
+              </h2>
+              <hr />
             </div>
-            <div className="row justify-content-center">
-                {loading ? <Loading/> : <ShowProducts/>}
-            </div>
+          </div>
+          <div className="row justify-content-center">
+            {loading ? <Loading /> : <ShowProducts />}
+          </div>
         </div>
-        </>
-    )
+      </>
+    );
 };
 
 export default Products;
+
+
