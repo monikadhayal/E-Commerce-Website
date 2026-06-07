@@ -7,7 +7,7 @@ const Register = () => {
     return(
         <>
         
-        <div className="container my-3 py-3">
+        <div className="container my-3 py-3 bg-lime-50">
                 <h1 className="text-center">Register Page</h1>
                 <hr />
                 <div className="row my-4 h-100">
@@ -50,6 +50,7 @@ const Register = () => {
                                 </div>
                     </div>
                 </div>
+                <Footer />
         </>
     )
 }
