@@ -1,12 +1,14 @@
-import React from 'react'
-import {Footer,Navbar,Product} from '../Components'
+import React from "react";
+import Product from "../Components/Product"; // ✅ sirf Product chahiye
+import Footer from "../Components/Footer"; // ✅ Footer bhi
 
-function Products() {       
-    return(
-        <>
-        <Product />
-        </>
-        )
+function Products() {
+  return (
+    <>
+      <Product />
+      <Footer />
+    </>
+  );
 }
 
 export default Products;

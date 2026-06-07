@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { Routes, Route } from "react-router-dom";
+
 
 const Navbar = () => {
   const state = useSelector((state) => state.HandleCart);

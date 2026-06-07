@@ -15,28 +15,22 @@ const Products = () => {
     const addProduct = (product) => {
         dispatch(addCart(product));
     }  
-    useEffect(() => { 
-        const getProducts = async () => {
-            setLoading(true);
-            const response = await fetch("https://fakestoreapi.com/products");
-            
-            if (componentMounted) {
-                // setData(await response.clone().json());
-                // setFilter(await response.json());
-                // setLoading(false);
-                const products = await response.json(); // ✅ Fix 3 - ek baar parse
-                setData(products);
-                setFilter(products);
-                setLoading(false);
-               
-            }
-
-       return () => {
-         componentMounted = false;
-       };
-    };
-    getProducts();
-},[]);
+    useEffect(() => {
+      const getProducts = async () => {
+        setLoading(true);
+        try {
+          const response = await fetch("https://fakestoreapi.com/products");
+          const products = await response.json();
+          setData(products);
+          setFilter(products);
+        } catch (error) {
+          console.error("Error:", error);
+        } finally {
+          setLoading(false);
+        }
+      };
+      getProducts();
+    }, []);
 
 const Loading = () => {
     return(
@@ -165,5 +159,6 @@ const Loading = () => {
 };
 
 export default Products;
+
 
 

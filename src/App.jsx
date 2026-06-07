@@ -1,10 +1,9 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
-
 import Navbar from "./Components/Navbar";
 import { Routes, Route } from "react-router-dom";
-
+import ScrollToTop from "./Components/ScrollToTop"; 
 import Home from "./Pages/Home";
 import Product from "./Pages/Product";
 import Cart from "./Pages/Cart";
@@ -18,9 +17,11 @@ import Products from "./Pages/Products";
 function App() {
   return (
     <>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        {/* <Route path="/products/:id" element={<Product />} /> */}
         {/* <Route path="/products/:id" element={<Product />} /> */}
         <Route path="/products" element={<Products />} />
         <Route path="/products/:id" element={<Product />} />
